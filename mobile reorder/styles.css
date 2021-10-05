@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    background:dodgerblue;
+  }
+  
+  .mobile-reorder-wrapper {
+    width: 90%;
+    min-height: 100%;
+    margin: auto;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mobile-reorder-wrapper > * {
+    width: 90%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    order: 9;
+    background: rgba(255,255,255,.5);
+  }
+  
+  .mobile-reorder-wrapper > *:last-child {
+    margin-bottom: 0;
+  }
+  
+  .toggle-nav {
+    display: none;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .toggle-nav:hover {
+    color: rgba(0,0,0,.7);
+  }
+  
+  .list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    background: rgba(255,255,255,.5);
+  }
+  
+  .item {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 3;
+    border-right: 1px solid rgba(0,0,0,.1);
+  }
+  
+  .item.icon {
+    flex-grow: 1;
+  }
+  
+  .item:hover {
+    background: rgba(255,255,255,.1);
+  }
+  
+  .item:hover .link {
+    color: rgba(0,0,0,.7);
+  }
+  
+  .item:last-child {
+    border-right: none;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .email-input,
+  .submit-input {
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .email-input {
+    height: 23px;
+    padding-left: 5px;
+    margin-right: 10px;
+  }
+  
+  .submit-input {
+    padding: 5px 10px;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .item {
+      width: 50%;
+      border: 1px solid rgba(0,0,0,.1);
+    }
+  
+    .item.icon { width: 25%; }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .title { order: 1; }
+    .nav { order: 0; }
+    .form { order: 3; }
+    .info { order: 2; }
+  
+    .toggle-nav { display: block }
+    .list { display: none; }
+    .list.active {
+      display: flex;
+      margin-top: 30px;
+    }
+  
+    .item { width: 100% }
+  }
